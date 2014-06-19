@@ -36,7 +36,7 @@ module.exports = function(fileOrStream, opt){
       case 'html':
         return '<link rel="import" href="' + filepath + '">';
       case 'coffee':
-        return '<script type="text/coffeescript" src="' + filepath + '"></script>';  
+        return '<script type="text/coffeescript" src="' + filepath + '"></script>';
     }
   };
 
@@ -221,7 +221,7 @@ function getInjectorTagsRegExp (starttag, endtag) {
 }
 
 function escapeForRegExp (str) {
-  return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace(/\s/g, ' *');
 }
 
 function unixify (filepath) {
